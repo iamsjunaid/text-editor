@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.app {
+  text-align: center;
+  width: 100%;
+}
+
+.editor-container {
+  width: 80%;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 1em;
+}
+
+.editor-header {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.save-button {
+  width: 100px;
+  height: 50px;
+  background-color: #3679c5;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.save-button:hover {
+  background-color: #2a5e9c;
+}
+
+.editor-border {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 1em;
+  margin: 1em auto;
+  width: 80%;
+  min-height: 60vh;
+}
+
+.editor {
+  background-color: #fff;
+}
