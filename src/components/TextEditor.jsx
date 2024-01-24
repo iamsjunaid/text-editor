@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 import {
   Editor,
   EditorState,
@@ -8,20 +8,18 @@ import {
   CompositeDecorator,
   Modifier,
   convertToRaw,
-} from "draft-js";
-import "draft-js/dist/Draft.css";
+} from 'draft-js';
+import 'draft-js/dist/Draft.css';
 
-const applyBlockStyle = (contentBlock) =>
-  contentBlock.getType() === "code-block" ? "code-block-style" : "";
+const applyBlockStyle = (contentBlock) => (contentBlock.getType() === 'code-block' ? 'code-block-style' : '');
 
-const RED_COLOR_STYLE = { color: "red" };
+const RED_COLOR_STYLE = { color: 'red' };
 
 const highlightRedText = {
-  strategy: (contentBlock, callback) =>
-    contentBlock.findStyleRanges(
-      (character) => character.hasStyle("RED_COLOR"),
-      callback
-    ),
+  strategy: (contentBlock, callback) => contentBlock.findStyleRanges(
+    (character) => character.hasStyle('RED_COLOR'),
+    callback,
+  ),
   component: (props) => <span style={RED_COLOR_STYLE}>{props.children}</span>,
 };
 
@@ -30,12 +28,12 @@ const editorDecorator = new CompositeDecorator([highlightRedText]);
 const TextEditor = () => {
   const [isSaving, setIsSaving] = useState(false);
   const [editorState, setEditorState] = useState(() => {
-    const savedContent = localStorage.getItem("SavedContent");
+    const savedContent = localStorage.getItem('SavedContent');
     return savedContent
       ? EditorState.createWithContent(
-          convertFromRaw(JSON.parse(savedContent)),
-          editorDecorator
-        )
+        convertFromRaw(JSON.parse(savedContent)),
+        editorDecorator,
+      )
       : EditorState.createEmpty(editorDecorator);
   });
 
@@ -59,40 +57,40 @@ const TextEditor = () => {
       contentState = Modifier.removeRange(
         contentState,
         newSelection,
-        "backward"
+        'backward',
       );
       const newContentState = Modifier.setBlockType(
         contentState,
         newSelection,
-        blockType
+        blockType,
       );
       return EditorState.push(
         newEditorState,
         newContentState,
-        "change-block-type"
+        'change-block-type',
       );
     };
 
     // Check for markers followed by a space
-    if (text.startsWith("# ") && start === 2) {
-      setEditorState(applyBlockTypeAndRemoveMarker("header-one", "#"));
-    } else if (text.startsWith("* ") && start === 2) {
-      setEditorState(applyBlockTypeAndRemoveMarker("unstyled", "*"));
-      setEditorState(RichUtils.toggleInlineStyle(newEditorState, "BOLD"));
-    } else if (text.startsWith("** ") && start === 3) {
-      setEditorState(applyBlockTypeAndRemoveMarker("unstyled", "**"));
-      setEditorState(RichUtils.toggleInlineStyle(newEditorState, "RED_COLOR"));
-    } else if (text.startsWith("*** ") && start === 4) {
-      setEditorState(applyBlockTypeAndRemoveMarker("unstyled", "***"));
-      setEditorState(RichUtils.toggleInlineStyle(newEditorState, "UNDERLINE"));
+    if (text.startsWith('# ') && start === 2) {
+      setEditorState(applyBlockTypeAndRemoveMarker('header-one', '#'));
+    } else if (text.startsWith('* ') && start === 2) {
+      setEditorState(applyBlockTypeAndRemoveMarker('unstyled', '*'));
+      setEditorState(RichUtils.toggleInlineStyle(newEditorState, 'BOLD'));
+    } else if (text.startsWith('** ') && start === 3) {
+      setEditorState(applyBlockTypeAndRemoveMarker('unstyled', '**'));
+      setEditorState(RichUtils.toggleInlineStyle(newEditorState, 'RED_COLOR'));
+    } else if (text.startsWith('*** ') && start === 4) {
+      setEditorState(applyBlockTypeAndRemoveMarker('unstyled', '***'));
+      setEditorState(RichUtils.toggleInlineStyle(newEditorState, 'UNDERLINE'));
     } else {
       setEditorState(newEditorState);
     }
 
     // Save to local storage
     localStorage.setItem(
-      "SavedContent",
-      JSON.stringify(convertToRaw(newEditorState.getCurrentContent()))
+      'SavedContent',
+      JSON.stringify(convertToRaw(newEditorState.getCurrentContent())),
     );
   };
 
@@ -103,21 +101,20 @@ const TextEditor = () => {
           <h3>Demo editor by Junaid Ahmed Syed</h3>
         </div>
         <button
+          type="button"
           onClick={() => setIsSaving(!isSaving)}
           className="save-button"
           disabled={isSaving}
         >
-          {isSaving ? "SAVED" : "SAVE"}
+          {isSaving ? 'SAVED' : 'SAVE'}
         </button>
       </div>
       <div className="editor-border">
         <Editor
           editorState={editorState}
-          handleKeyCommand={(command, state) =>
-            RichUtils.handleKeyCommand(state, command)
-              ? "handled"
-              : "not-handled"
-          }
+          handleKeyCommand={(command, state) => (RichUtils.handleKeyCommand(state, command)
+            ? 'handled'
+            : 'not-handled')}
           keyBindingFn={getDefaultKeyBinding}
           handlePastedText={(state) => handleEditorChange(state)}
           onChange={handleEditorChange}
