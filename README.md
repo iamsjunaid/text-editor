@@ -1,65 +1,166 @@
-# React and Redux
+<!-- TABLE OF CONTENTS -->
 
-If you are not familiar with linters and GitHub Actions, read [root level README](../README.md).
+# 📗 Table of Contents
 
-## Set-up GitHub Actions
+- [📗 Table of Contents](#-table-of-contents)
+- [📖 About ](#-about-)
+  - [🛠 Built With ](#-built-with-)
+    - [Tech Stack ](#tech-stack-)
+    - [Key Features ](#key-features-)
+  - [🚀 Live Demo](#live-demo)
+  - [💻 Getting Started ](#-getting-started-)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+    - [Install](#install)
+    - [Usage](#usage)
+    - [Run tests](#run-tests)
+    - [Deployment](#deployment)
+  - [👥 Authors ](#-authors-)
+  - [🔭 Future Features ](#-future-features-)
+  - [🤝 Contributing ](#-contributing-)
+  - [⭐️ Show your support ](#️-show-your-support-)
+  - [🙏 Acknowledgments ](#-acknowledgments-)
+  - [❓ FAQ (OPTIONAL) ](#-faq-optional-)
+  - [📝 License ](#-license-)
 
-This GitHub Action is going to run [ESLint](https://eslint.org/) and [Stylelint](https://stylelint.io/) to help you find style issues.
+<!-- PROJECT DESCRIPTION -->
 
-[Stylelint](https://stylelint.io/) is a linter for your stylesheets that helps you avoid errors and enforce conventions.
+# 📖 About <a name="about-project"></a>
 
-[ESLint](https://eslint.org/) is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code, with the goal of making code more consistent and avoiding bugs.
+This app is created as a part of the assessment for the position of Frontend developer. It is a text editor app with some basic features. It is created using ReactJS. It is a single page application with a very interactive user interface.  
+ 
+## 🛠 Built With <a name="built-with"></a>
+> a combination of HTML CSS
 
-Please do the following **steps in this order**:
+### Tech Stack <a name="tech-stack"></a>
 
-1. In the first commit of your feature branch create a `.github/workflows` folder and add a copy of [`.github/workflows/linters.yml`](.github/workflows/linters.yml) to that folder.
-    - **Remember** to use the file linked above
-    - **Remember** that `.github` folder starts with a dot.
-2. **Do not make any changes in config files - they represent style guidelines that you share with your team - which is a group of all Microverse students.**
-    - If you think that change is necessary - open a [Pull Request in this repository](../README.md#contributing) and let your code reviewer know about it.
-3. When you open your first pull request you should see the result of the GitHub Actions:
+> HTML
+> CSS
+> JavaScript
 
-![gh actions checks](../assets/images/gh-actions-eslint-stylelint-checks.png)
 
-Click on the `Details` link to see the full output and the errors that need to be fixed:
+<!-- Features -->
 
-![gh actions failing checks](../assets/images/gh-actions-html-css-failing-checks.png)
+### Key Features <a name="key-features"></a>
 
-## Set-up linters in your local env
+- **Impressive user interface**
+- **User friendly**
+- **Powerful interactive features**
 
-### ESLint
 
-1. Run 
-    ```
-    npm install --save-dev eslint@7.x eslint-config-airbnb@18.x eslint-plugin-import@2.x eslint-plugin-jsx-a11y@6.x eslint-plugin-react@7.x eslint-plugin-react-hooks@4.x @babel/eslint-parser@7.x @babel/core@7.x  @babel/plugin-syntax-jsx@7.x  @babel/preset-react@7.x @babel/preset-react@7.x
-    ```
-    *not sure how to use npm? Read [this](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).*
-2. Copy [.eslintrc.json](./.eslintrc.json) and [.babelrc](./.babelrc) to the root directory of your project.
-3. **Do not make any changes in config files - they represent style guidelines that you share with your team - which is a group of all Microverse students.**
-    - If you think that change is necessary - open a [Pull Request in this repository](../README.md#contributing) and let your code reviewer know about it.
-4. Run `npx eslint "**/*.{js,jsx}"` on the root of your directory of your project.
-5. Fix linter errors.
-6. **IMPORTANT NOTE**: feel free to research [auto-correct options for Eslint](https://eslint.org/docs/latest/user-guide/command-line-interface#fixing-problems) if you get a flood of errors but keep in mind that correcting style errors manually will help you to make a habit of writing a clean code!
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Stylelint
+## 🚀 Live Demo <a name="live-demo"></a>
 
-1. Run
+- [Live Demo Link](https://react-text-editor.onrender.com)
 
-   ```
-   npm install --save-dev stylelint@13.x stylelint-scss@3.x stylelint-config-standard@21.x stylelint-csstree-validator@1.x
-   ```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<!-- GETTING STARTED -->
 
-   *not sure how to use npm? Read [this](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).*
+## 💻 Getting Started <a name="getting-started"></a>
 
-2. Copy [.stylelintrc.json](./.stylelintrc.json) to the root directory of your project.
-3. **Do not make any changes in config files - they represent style guidelines that you share with your team - which is a group of all Microverse students.**
-   - If you think that change is necessary - open a [Pull Request in this repository](../README.md#contributing) and let your code reviewer know about it.
-4. Run `npx stylelint "**/*.{css,scss}"` on the root of your directory of your project.
-5. Fix linter errors.
-6. **IMPORTANT NOTE**: feel free to research [auto-correct options for Stylelint](https://stylelint.io/user-guide/usage/options) if you get a flood of errors but keep in mind that correcting style errors manually will help you to make a habit of writing a clean code!
 
-## Test/Deployment Actions
+### Prerequisites
 
-Feel free to add your own deployment actions which can run your tests and deploy to Heroku.
+In order to run this project you need:
 
-Make sure that you do not modify the [`.github/workflows/linters.yml`](.github/workflows/linters.yml) but that you create a separe GitHub Action workflow file for that.
+
+Example command:
+
+```sh
+ nodeJS --v18.0
+```
+
+### Setup
+
+Clone this repository to your desired folder:
+
+
+Example commands:
+
+```sh
+  cd my-folder
+  git clone https://github.com/iamsjunaid/react-text-editor.git
+```
+
+### Install
+
+Install this project with:
+
+
+Example command:
+
+```sh
+  cd my-project
+  npm install
+```
+
+
+### Usage
+
+To run the project, execute the following command:
+
+
+Example command:
+
+```sh
+  npm start
+```
+
+### Deployment
+
+You can deploy this project using:
+
+
+Example:
+
+```sh
+    gh-pages
+```
+
+Or 
+
+
+```sh
+    netlify
+```
+
+Or 
+
+```sh
+    render
+```
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- AUTHORS -->
+
+## 👥 Authors <a name="authors"></a>
+
+👤 **Junaid**
+
+- GitHub: [@iamsjunaid](https://github.com/iamsjunaid)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/junaid-syed-058b2779)
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>..
+
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+
+- [ ] **interactive features**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/iamsjunaid/react-text-editor/issues).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
