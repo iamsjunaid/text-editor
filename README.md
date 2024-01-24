@@ -52,7 +52,7 @@ This app is created as a part of the assessment for the position of Frontend dev
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://react-text-editor.onrender.com)
+- [Live Demo Link](https://text-editor-q4bw.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- GETTING STARTED -->
